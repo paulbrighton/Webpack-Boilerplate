@@ -1,0 +1,13 @@
+@import "base_styles/reset";
+@import "base_styles/base";
+
+$h3-bg-color: aqua;
+
+h3 {
+  background-color: $h3-bg-color;
+  user-select: none;
+}
+
+p {
+  font-size: 1.3em;
+}

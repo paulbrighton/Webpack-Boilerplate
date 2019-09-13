@@ -3,7 +3,7 @@ class Header {
     console.log('Header constructor')
   }
   getFirstHeading () {
-    return 'Webpack Boilerplate'
+    return '<h1>Webpack Boilerplate</h1>'
   }
 }
 

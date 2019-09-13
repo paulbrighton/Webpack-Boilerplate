@@ -1,10 +1,12 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+
 module.exports = {
-  entry: './src/index.js',
+  entry: './src/index',
   output: {
-    filename: 'main.js',
-    path: path.resolve(__dirname, 'dist')
+    path: path.resolve(__dirname, '../dist'),
+    filename: 'main.js'
   },
   module: {
     rules: [
@@ -19,21 +21,41 @@ module.exports = {
             ]
           }
         }
+      },
+      {
+        test: [/.css$|.scss$/],
+        use: [
+          MiniCssExtractPlugin.loader,
+          'css-loader',
+          'sass-loader',
+          'postcss-loader'
+        ]
       }
     ]
   },
+  resolve: {
+    alias: {
+      '@scss': path.resolve(__dirname, '../src/styles/scss'),
+      '@': path.resolve(__dirname, '../src')
+    },
+    modules: [
+      'node_modules',
+      path.resolve(__dirname, 'src')
+    ],
+    extensions: ['.js']
+  },
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'Webpack 4 Starter',
+      title: 'Webpack Boilerplate',
       template: './src/index.html',
       inject: true,
       minify: {
         removeComments: true,
-        collapseWhitespace: false
+        collapseWhitespace: true
       }
+    }),
+    new MiniCssExtractPlugin({
+      filename: 'style.css'
     })
-  ],
-  resolve: {
-    extensions: ['.js', '.ts']
-  }
+  ]
 }
