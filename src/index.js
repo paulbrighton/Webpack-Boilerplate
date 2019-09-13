@@ -1,14 +1,14 @@
 import Header from './app/header'
-import Footer from './app/footer'
+import Sum from './app/sum'
+
 import './styles/scss/main.scss'
-// import catImage from './assets/images/british-lilac-cat-2.jpg'
+
+console.log('This is loading from index.js')
 
 let header = new Header()
-let firstHeading = header.getFirstHeading()
+let firstHeading = header.insertFirstHeading()
 console.log(firstHeading)
 
-let footer = new Footer()
-let footerText = footer.getFooterText()
-console.log(footerText)
-
-// document.getElementById('cat-image').setAttribute('src', catImage)
+let sum = new Sum()
+let simpleSum = sum.simpleSum()
+console.log(simpleSum)

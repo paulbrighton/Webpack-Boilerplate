@@ -1,9 +1,10 @@
 class Header {
-  constructor () {
-    console.log('Header constructor')
-  }
-  getFirstHeading () {
-    return 'Webpack Boilerplate'
+  insertFirstHeading () {
+    const header = document.querySelector('header')
+    const headingOne = document.createElement('h1')
+    headingOne.appendChild(document.createTextNode('Webpack Boilerplate'))
+    header.appendChild(headingOne)
+    header.insertBefore(headingOne, header.childNodes[0] || null)
   }
 }
 

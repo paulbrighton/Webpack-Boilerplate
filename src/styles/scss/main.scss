@@ -1,11 +1,15 @@
 @import "base_styles/reset";
 @import "base_styles/base";
 
-$h3-bg-color: aqua;
+$h1-color: #252525;
 
-h3 {
-  background-color: $h3-bg-color;
+h1 {
+  color: $h1-color;
   user-select: none;
+  text-align: center;
+  font-size: 3em;
+  margin: 25px 0;
+  font-weight: 700;
 }
 
 p {
