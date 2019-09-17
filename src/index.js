@@ -9,6 +9,6 @@ let header = new Header()
 let firstHeading = header.insertFirstHeading()
 console.log(firstHeading)
 
-let sum = new Sum()
+const sum = new Sum()
 let simpleSum = sum.simpleSum()
 console.log(simpleSum)
